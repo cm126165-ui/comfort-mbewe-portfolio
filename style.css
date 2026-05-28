@@ -410,6 +410,24 @@ a.button,
   margin-bottom: 2rem;
 }
 
+.now-content {
+  display: grid;
+  gap: 1.2rem;
+  max-width: 720px;
+  margin-bottom: 0;
+}
+
+.now-content p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.8;
+}
+
+.now-content strong {
+  color: var(--color-text-heading);
+}
+
 .about-copy p,
 .project-description,
 .featured-copy,
@@ -427,11 +445,12 @@ a.button,
   padding: 0.95rem 1.25rem;
   border-radius: 999px;
   font-weight: 600;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.3);
 }
 
 .button-primary {
@@ -443,6 +462,7 @@ a.button,
 .button-primary:hover {
   background: #4b8df6;
   border-color: #4b8df6;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
 }
 
 .button-outline {
@@ -454,6 +474,7 @@ a.button,
 .button-outline:hover {
   color: #ffffff;
   background: var(--color-accent);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
 }
 
 .skills-grid {
@@ -492,14 +513,15 @@ a.button,
   color: var(--color-text-muted);
   font-family: "Fira Code", monospace;
   font-size: var(--text-sm);
-  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-tag:hover {
   color: var(--color-accent);
   border-color: var(--color-accent);
   background: var(--color-accent-glow);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
 .project-list {
@@ -516,13 +538,14 @@ a.button,
   border: 1px solid var(--color-border);
   border-radius: 12px;
   box-shadow: 0 12px 30px rgba(2, 6, 23, 0.18);
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .project-card:hover {
   border-color: var(--color-accent);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15), var(--shadow-lg);
+  background: rgba(20, 31, 52, 0.95);
 }
 
 .project-media {
@@ -636,6 +659,12 @@ a.button,
   font-size: var(--text-xl);
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: var(--color-text-heading);
+  transition: color 0.2s ease;
+}
+
+.project-card:hover .project-content h3 {
+  color: var(--color-accent);
 }
 
 .project-subtitle,
@@ -645,6 +674,34 @@ a.button,
   font-family: "Fira Code", monospace;
   font-size: var(--text-sm);
 }
+
+.project-impact {
+  display: flex;
+  gap: 2rem;
+  margin: 1.25rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(59, 130, 246, 0.15);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.impact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.impact-stat {
+  color: var(--color-accent);
+  font-family: "Fira Code", monospace;
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.impact-label {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
 
 .project-links {
   display: flex;
@@ -660,11 +717,13 @@ a.button,
   color: var(--color-accent);
   font-size: var(--text-sm);
   font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .project-link:hover {
   text-decoration: underline;
   text-underline-offset: 0.2em;
+  transform: translateX(3px);
 }
 
 .project-private-note {
@@ -727,14 +786,14 @@ a.button,
   border: 1px solid var(--color-border);
   border-radius: 16px;
   box-shadow: 0 12px 30px rgba(2, 6, 23, 0.16);
-  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .showcase-hero:hover,
 .gallery-card:hover {
   border-color: var(--color-accent);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15), var(--shadow-lg);
 }
 
 .showcase-hero img,
@@ -1056,6 +1115,16 @@ a.button,
     backdrop-filter: blur(18px);
     background: linear-gradient(180deg, rgba(10, 15, 30, 0.95), rgba(10, 15, 30, 0.75));
     border-bottom: 1px solid rgba(30, 41, 59, 0.65);
+  }
+
+  .project-impact {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .impact-item {
+    flex: 1 1 auto;
+    min-width: 150px;
   }
 
   .mobile-brand {
